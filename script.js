@@ -12,12 +12,12 @@ function Card(filme, n_filme) {
     card.classList.add("card")
     
     let a = document.createElement("a")
-    a.href = `/detalhes.html?id=${filme.id}&type=${n_filme ? 1 : 2}`
+    a.href = `/Fiap-Filmes/detalhes.html?id=${filme.id}&type=${n_filme ? 1 : 2}`
 
     let poster = document.createElement("img")
     poster.src = url_base_img + filme.poster_path
     poster.loading = 'lazy'
-    poster.href = `/detalhes.html?id=${filme.id}`
+    poster.href = `/Fiap-Filmes/detalhes.html?id=${filme.id}`
     if (n_filme)
         poster.alt = "Poster do filme " + filme.title
     else
@@ -46,7 +46,7 @@ function Card(filme, n_filme) {
     
     let botao = document.createElement("a")
     botao.classList.add("botao")
-    botao.href = `/detalhes.html?id=${filme.id}`
+    botao.href = `/Fiap-Filmes/detalhes.html?id=${filme.id}`
     botao.innerText = "Detalhes"
     
     a.appendChild(poster)
