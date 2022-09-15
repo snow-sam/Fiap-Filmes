@@ -3,6 +3,7 @@ const language = 'pt-br'
 const url_base = 'https://api.themoviedb.org/3'
 const url_base_img = 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/'
 
+
 let dados;
 let divSinopse = document.querySelector("#divSinopse")
 let lMenu = document.querySelector("#lMenu")
@@ -28,6 +29,11 @@ function Sinopse(filme) {
     
     divSinopse.appendChild(poster)
     divSinopse.appendChild(sinopse)
+
+    document.querySelector('#titulo_orig').innerText = filme.original_name || filme.original_title
+    document.querySelector('#idioma').innerText = filme.original_language.toUpperCase()
+    document.querySelector('#nota').innerText = filme.vote_average.toFixed(2)
+
     return
 }
 
