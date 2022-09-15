@@ -7,7 +7,7 @@ let dados;
 let divSinopse = document.querySelector("#divSinopse")
 let lMenu = document.querySelector("#lMenu")
 
-function Sinopse(filme, n_filme) {
+function Sinopse(filme) {
     let sinopse = document.createElement("div")
     sinopse.classList.add("sinopse")
     

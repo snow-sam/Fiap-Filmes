@@ -7,25 +7,24 @@ let dados;
 let filmes = document.querySelector("#filmes")
 let series = document.querySelector("#series")
 
-function Card(filme, n_filme) {
+function Card(filme, is_filme) {
     let card = document.createElement("div")
     card.classList.add("card")
     
     let a = document.createElement("a")
-    a.href = `/Fiap-Filmes/detalhes.html?id=${filme.id}&type=${n_filme ? 1 : 2}`
+    a.href = `/Fiap-Filmes/detalhes.html?id=${filme.id}&type=${is_filme ? 1 : 2}`
 
     let poster = document.createElement("img")
     poster.src = url_base_img + filme.poster_path
     poster.loading = 'lazy'
-    poster.href = `/Fiap-Filmes/detalhes.html?id=${filme.id}`
-    if (n_filme)
+    if (is_filme)
         poster.alt = "Poster do filme " + filme.title
     else
         poster.alt = "Poster do filme " + filme.name
     
     
     let titulo = document.createElement("p")
-    if (n_filme)
+    if (is_filme)
         titulo.innerText = filme.title
     else
         titulo.innerText = filme.name
@@ -46,7 +45,7 @@ function Card(filme, n_filme) {
     
     let botao = document.createElement("a")
     botao.classList.add("botao")
-    botao.href = `/Fiap-Filmes/detalhes.html?id=${filme.id}`
+    botao.href = `/Fiap-Filmes/detalhes.html?id=${filme.id}&type=${is_filme?1:2}`
     botao.innerText = "Detalhes"
     
     a.appendChild(poster)
